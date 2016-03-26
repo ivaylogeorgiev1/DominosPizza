@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Liberteri Italiano Web Template</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!--[if IE 6]>
+		<link rel="stylesheet" type="text/css" href="css/ie6.css">
+	<![endif]-->
+<style type="text/css">
+input, select, option {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input, select {
+	width: 200px;
+	height: 20px;
+	border: 1px #ccc solid;
+	vertical-align: top;
+}
+
+.login-page, h1 {
+	text-align: center;
+}
+</style>
+
+</head>
+<body>
+	<h1>REGISTRATION</h1>
+	<div class="login-page">
+		<div class="form">
+			<form action="./registration" method="post" class="register-form">
+				<input type="text" name="name" placeholder="name" /><br /> <input
+					type="password" name="password" placeholder="password " /><br />
+				<input type="text" name="email" placeholder="email address " /> <br />
+				<input type="text" name="first" placeholder="First name" /> <br />
+				<input type="text" name="last" placeholder="Address" /><br />
+				<select name="rest">
+					<option value="Mladost">Mladost</option>
+					<option value="Ivan Vazov">Ivan Vazov</option>
+					<option value="Studentski Grad">Studentski Grad</option>
+					<option value="Centyr">Centyr</option>
+				</select><br /> <input type="text" name="phone" placeholder="phone number" />
+				<br />
+				<button>create</button>
+				<p class="message">
+					Already registered? <a href="login.html">Sign In</a>
+				</p>
+			</form>
+		</div>
+	</div>
+</html>
+
