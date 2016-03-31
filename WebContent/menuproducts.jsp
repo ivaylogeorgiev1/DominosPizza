@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page session="false"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,37 +42,38 @@ hr {
 		<div class="row">
 			<%
 				List<Product> products = UserDao.getInstance().getProducts();
+				IProductDAO pDAO = ProductDAO.getInstance();
 				for (Product p : products) {
+					String photoLocation = pDAO.getPhoto(p.getId());
 			%>
 
 			<div class='col-lg-13 bg-success'>
-				<img class="btn btn-success" src='./images/images.jpg' height='400' width='400'>
-				Description: <%=p.getDecription() %>
+				<img src='./images/YES?photoname=<%=photoLocation%>' height='400'
+					width='400' class="btn btn-success"> Description:
+				<%=p.getDecription()%>
 				<p>
-					<%=p.getName()%>
-					Price
-					<%=p.getPrice()%>
-					BGN
+				<%=p.getName()%>
+				Price
+				<%=p.getPrice()%>
+				BGN
 				<form method='post' action='./MenuServlet'>
-					<input class="btn btn-success btn-lg" type='submit' value='Add to Shopping Cart'
-						name=<%=p.getId()%>></input>
-						
+					<input class="btn btn-success btn-lg" type='submit'
+						value='Add to Shopping Cart' name=<%=p.getId()%>></input>
+
 				</form>
 				</p>
 				<hr>
 				<%
 					}
 				%>
-			
-		</div>
-	</div>
 
-	<br />
-	<a href='./index.jsp'>Back to homepage</a>
-	<br />
-	<form  method='get' action='./ShoppingCart'>
-		<input class="btn btn-default" type='submit' value='GoToShoppingCart'>
-	</form>
+			</div>
+		</div>
+
+		<br /> <a href='./index.jsp'>Back to homepage</a> <br />
+		<form method='get' action='./ShoppingCart'>
+			<input class="btn btn-default" type='submit' value='GoToShoppingCart'>
+		</form>
 	</div>
 </body>
 </html>

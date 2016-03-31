@@ -3,7 +3,9 @@
 <%@page import="java.io.File"%>
 <%@page import="java.io.OutputStream"%>
 <%@page import="java.io.FileOutputStream"%>
-
+<%@page import="javax.imageio.ImageIO" %>
+<%@page import="java.awt.image.BufferedImage" %>
+<%@page import="java.io.IOException" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page session="false"%>
@@ -68,8 +70,8 @@ hr {
 		<a href="#Foo" class="btn btn-default" data-toggle="collapse">Make
 			changes </a>
 	</div>
-	
-	<div class='container' >
+
+	<div class='container'>
 		<div class="row">
 			<%
 				List<Product> products = UserDao.getInstance().getProducts();
@@ -79,18 +81,18 @@ hr {
 				//OutputStream output = new BufferedOutputStream(
 				//		new FileOutputStream(file));
 				for (Product p : products) {
-					String photoLocation = "./images" + pDAO.getPhoto(p.getId());
+					String photoLocation =  pDAO.getPhoto(p.getId());
 					//output.write(photoBytes);
 			%>
 
 			<div class='col-lg-13 bg-success'>
 
-				<img src='<%=photoLocation%>' height='400' width='400'>
+				<img src='./images/YES?photoname=<%=photoLocation%>' height='400' width='400'>
 				Description:
 				<%=p.getDecription()%>
 				<p>
 					<%=p.getName()%>
-					Price
+					Prices
 					<%=p.getPrice()%>
 					BGN
 				<form method='post' action='./MenuServlet'>

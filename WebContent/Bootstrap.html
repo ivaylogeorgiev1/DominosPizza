@@ -18,7 +18,6 @@
 
 hr {
 	style ="color: red"
-
 }
 </style>
 </head>
@@ -40,10 +39,17 @@ hr {
 		</div>
 	</div>
 
+	<div class="collapse" id="Foo">
+		<form action="" method="POST">
+			<textarea rows="10" cols="80" name="commentContent"></textarea>
+			<input type="submit" value="post!"></br>
+		</form>
+
+	</div>
 	<div id="Foo" class="collapse">This div (Foo) is hidden by
 		default</div>
 	<hr>
-<img src='./images/outImage12.jpg' height='400' width='400'>
+	<img src='./images/outImage12.jpg' height='400' width='400'>
 
 	<a href="#Foo" class="btn btn-default" data-toggle="collapse">Toggle
 		Foo</a>
@@ -53,6 +59,7 @@ hr {
 		default</div>
 	<div id="Bar" class="collapse in">This div (Bar) is shown by
 		default and can toggle</div>
+
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

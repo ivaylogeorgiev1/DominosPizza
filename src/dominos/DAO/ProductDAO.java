@@ -82,12 +82,16 @@ public class ProductDAO implements IProductDAO {
 		// OutputStream outputStream=null;
 		Blob blob;
 		byte[] myBytes = null;
-		String relativePath="../../Users/Ivaylo/workspace/DominosPizza/WebContent/images";
-		String filePath = "/outImage"+idProduct+".jpg";
-		File file = new File(relativePath+filePath);
+		// String
+		// relativePath="../../Users/Ivaylo/workspace/DominosPizza/WebContent/images";
+		// String filePath = "/outImage"+idProduct+".jpg";
+
+		String relativePath = "D:\\images\\";
+		String filePath = "outImage" + idProduct + ".jpg";
+		File file = new File(relativePath + filePath);
 		if (!file.exists()) {
 			try {
-				
+
 				file.createNewFile();
 				System.out.println("CREATED");
 			} catch (IOException e) {
@@ -105,7 +109,7 @@ public class ProductDAO implements IProductDAO {
 				myBytes = new byte[(int) (blob.length())];
 				InputStream inputStream = blob.getBinaryStream();
 				OutputStream outputStream = new BufferedOutputStream(
-						new FileOutputStream(relativePath+filePath));
+						new FileOutputStream(relativePath + filePath));
 				int bytesRead = -1;
 
 				while ((bytesRead = inputStream.read(myBytes)) != -1) {
